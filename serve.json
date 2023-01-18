@@ -1,0 +1,21 @@
+{
+  "rewrites": [
+    {
+      "source": "/assets/styles/:rest",
+      "destination": "/src/assets/styles/:rest"
+    },
+    {
+      "source": "/assets/icons/:rest",
+      "destination": "/src/assets/icons/:rest"
+    },
+    {
+      "source": "/assets/fonts/:rest",
+      "destination": "/src/assets/fonts/:rest"
+    },
+    {
+      "source": "/assets/images/:rest",
+      "destination": "/src/assets/images/:rest"
+    }
+  ],
+  "unlisted": ["/.*", "/*.js", "/*.json", "/*.yml", "/*.md", "/node_modules", "/utility_modules"]
+}
