@@ -1,0 +1,9 @@
+version: 2
+travis: false
+git:
+  copy:
+    - .github/**
+    - public/**
+    - src/**
+    - utility_modules/**
+    - '*.*'
