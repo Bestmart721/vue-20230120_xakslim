@@ -6,10 +6,9 @@ const config = {
 
   transform: {
     // Support Vue SFC
-    '^.+\\.vue$': require.resolve('vue-jest'),
+    '^.+\\.vue$': require.resolve('@vue/vue3-jest'),
     // Use babel for ES modules support in Jest and JSX
-    '^.+\\.jsx?$': require.resolve('babel-jest'),
-    '^.+\\.tsx?$': require.resolve('ts-jest'),
+    '^.+\\.[jt]sx?$': require.resolve('babel-jest'),
     // Ignore assets
     '.+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$': require.resolve('jest-transform-stub'),
   },
@@ -35,12 +34,6 @@ const config = {
   // https://github.com/facebook/jest/issues/6766
   testURL: 'http://localhost/',
   watchPlugins: [require.resolve('jest-watch-typeahead/filename'), require.resolve('jest-watch-typeahead/testname')],
-
-  globals: {
-    'ts-jest': {
-      babelConfig: true,
-    },
-  },
 
   clearMocks: true,
 };

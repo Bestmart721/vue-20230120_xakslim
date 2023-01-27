@@ -1,12 +1,14 @@
 module.exports = {
   presets: [
     [
-      '@vue/babel-preset-app',
+      '@babel/preset-env',
       {
         targets: {
           node: 'current',
         },
       },
     ],
+    '@babel/preset-typescript',
   ],
+  plugins: ['@vue/babel-plugin-jsx'],
 };
