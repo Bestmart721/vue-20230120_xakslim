@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>VueCalculator</title>
+    <link rel="stylesheet" href="/assets/styles/index.css" />
+    <style>
+      @font-face {
+        font-family: emoji;
+        src: local('Apple Color Emoji'), local('Android Emoji'), local('Segoe UI Emoji'), local(EmojiSymbols),
+          local(Symbola);
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .col {
+        padding: 0.5rem;
+      }
+
+      input[type='number'] {
+        width: 48px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app" class="container">
+      <div class="row">
+        <div class="col">
+          <input type="number" />
+        </div>
+
+        <div class="col" style="display: flex; flex-direction: column; font-family: emoji">
+          <label><input type="radio" name="operator" value="sum" /> ➕</label>
+          <label><input type="radio" name="operator" value="subtract" /> ➖</label>
+          <label><input type="radio" name="operator" value="multiply" /> ✖</label>
+          <label><input type="radio" name="operator" value="divide" /> ➗</label>
+        </div>
+
+        <div class="col">
+          <input type="number" />
+        </div>
+
+        <div class="col">=</div>
+
+        <output class="col">0</output>
+      </div>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

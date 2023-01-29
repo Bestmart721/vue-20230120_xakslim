@@ -1,6 +1,6 @@
-import fs from 'fs';
-import { extname, join, resolve } from 'path';
-import { fileURLToPath, URL } from 'url';
+import fs from 'node:fs';
+import { extname, join, resolve } from 'node:path';
+import { fileURLToPath, URL } from 'node:url';
 
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import { defineConfig } from 'vite';
