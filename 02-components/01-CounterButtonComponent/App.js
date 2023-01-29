@@ -14,6 +14,8 @@ export default defineComponent({
     };
   },
 
+
+
   template: `
     <div class="sample container">
       <p>count = {{ count }}</p>
