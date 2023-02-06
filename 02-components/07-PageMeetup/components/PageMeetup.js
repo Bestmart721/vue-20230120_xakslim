@@ -21,18 +21,20 @@ export default defineComponent({
     return {
       meetup: null,
       loader: false,
-      hasError: false
+      error: null,
     };
   },
   methods: {
     getMeetups() {
       this.loader = true;
+      this.error = null;
+      this.meetup = null;
       return fetchMeetupById(this.meetupId)
         .then((result) => {
           this.meetup = result;
         })
         .catch(error => {
-          this.hasError = true;
+          this.error = error.message;
         })
         .finally(() => {
           this.loader = false;
@@ -51,14 +53,15 @@ export default defineComponent({
   template: `
     <div class="page-meetup">
     <MeetupView :meetup="meetup" v-if="meetup" />
+    <UiContainer v-if="error">
+      <UiAlert>{{ error }}</UiAlert>
+    </UiContainer>
+    </div>
 
     <UiContainer v-if="loader">
       <UiAlert>Загрузка...</UiAlert>
     </UiContainer>
 
-    <UiContainer v-if="hasError">
-      <UiAlert>error</UiAlert>
-    </UiContainer>
-    </div>
+
   `
 });
