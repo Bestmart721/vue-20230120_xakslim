@@ -61,7 +61,5 @@ export default defineComponent({
     <UiContainer v-if="loader">
       <UiAlert>Загрузка...</UiAlert>
     </UiContainer>
-
-
   `
 });
